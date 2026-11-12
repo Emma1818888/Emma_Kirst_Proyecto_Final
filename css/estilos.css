@@ -1,0 +1,867 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #210d41;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ENCABEZADO */
+.encabezado {
+    background-color: #2f135c;
+    padding: 20px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    color: #9f2ffa;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.navegacion {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.navegacion a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navegacion a:hover {
+    color: #9f2ffa;
+}
+
+/* CONTENEDOR */
+.contenedor {
+    width: 88%;
+    max-width: 1200px;
+    margin: 35px auto;
+}
+
+/* BIENVENIDA */
+.bienvenida {
+    margin-bottom: 25px;
+}
+
+.bienvenida h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.bienvenida p {
+    color: #c5c9d6;
+}
+
+/* BANNER (la foto se carga desde panel.php) */
+.banner {
+    min-height: 350px;
+    background-color: #151f3b;
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    padding: 40px;
+    margin-bottom: 45px;
+}
+
+.banner-contenido {
+    max-width: 550px;
+}
+
+.banner h2 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.banner p {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+/* BOTONES */
+.boton {
+    display: inline-block;
+    background-color: #9f2ffa;
+    color: white;
+    text-decoration: none;
+    padding: 13px 25px;
+    border-radius: 7px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.boton:hover {
+    background-color: #9f2ffa;
+}
+
+/* TÍTULOS */
+.titulo-seccion {
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+/* TARJETAS */
+.tarjetas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-bottom: 45px;
+}
+
+.tarjeta {
+    background-color: #2f135c;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.tarjeta:hover {
+    transform: translateY(-5px);
+}
+
+.tarjeta img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+}
+
+.tarjeta h3 {
+    padding: 15px 15px 5px;
+    font-size: 21px;
+}
+
+.tarjeta p {
+    padding: 5px 15px 15px;
+    color: #c5c9d6;
+}
+
+.tarjeta .boton {
+    margin: 0 15px 18px;
+}
+
+/* OFERTAS */
+.seccion-ofertas {
+    background-color: #2f135c;
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 45px;
+}
+
+.seccion-ofertas h2 {
+    color: #9f2ffa;
+    margin-bottom: 15px;
+}
+
+/* PERFIL */
+.perfil {
+    background-color: #2f135c;
+    border-radius: 12px;
+    padding: 30px;
+    max-width: 600px;
+}
+
+.perfil-dato {
+    padding: 15px 0;
+    border-bottom: 1px solid #17003b;
+}
+
+.perfil-dato:last-child {
+    border-bottom: none;
+}
+
+.perfil-dato span {
+    color: #9f2ffa;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.perfil-dato p {
+    font-size: 18px;
+    margin-top: 5px;
+}
+
+/* MENSAJE (comprar, avisos) */
+.mensaje-caja {
+    background-color: #2f135c;
+    border-radius: 12px;
+    padding: 40px;
+    max-width: 600px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.mensaje-caja h1 {
+    margin-bottom: 20px;
+}
+
+.mensaje-caja p {
+    color: #c5c9d6;
+    margin-bottom: 15px;
+}
+
+.mensaje-caja .boton {
+    margin-top: 10px;
+}
+
+/* PIE DE PÁGINA (queda siempre al fondo) */
+.pie {
+    background-color: #101832;
+    padding: 30px;
+    text-align: center;
+    color: #c5c9d6;
+    margin-top: auto;
+}
+
+/* FORMULARIOS */
+form {
+    background-color: #151f3b;
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 12px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 18px;
+    border: 1px solid #46516d;
+    border-radius: 6px;
+    background-color: #080d20;
+    color: white;
+}
+
+button {
+    background-color: #9f2ffa;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #9f2ffa;
+}
+
+/* TABLAS */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    background-color: #151f3b;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #46516d;
+    text-align: left;
+}
+
+th {
+    background-color: #9f2ffa;
+}
+
+tr:hover {
+    background-color: #202d50;
+}
+
+/* TEXTOS */
+p {
+    line-height: 1.6;
+}
+
+/* DETALLE DEL ARTISTA */
+.detalle-pagina {
+    width: 92%;
+    max-width: 1250px;
+    margin: 65px auto;
+}
+
+.detalle-superior {
+    color: #9f2ffa;
+    text-align: center;
+    letter-spacing: 4px;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.detalle-artista {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 40px;
+    align-items: center;
+    padding: 20px;
+    background: #171725;
+    border-radius: 18px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.detalle-imagen img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 10px;
+    display: block;
+}
+
+.detalle-contenido {
+    padding: 35px 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.detalle-categoria {
+    color: #9f2ffa;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.detalle-contenido h1 {
+    font-size: 45px;
+    margin: 18px 0;
+}
+
+.detalle-linea {
+    width: 65px;
+    height: 4px;
+    background: #9f2ffa;
+    border-radius: 5px;
+    margin-bottom: 25px;
+}
+
+.detalle-descripcion {
+    color: #c5c5d0;
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.detalle-informacion {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    border-top: 1px solid #15151a;
+    border-bottom: 1px solid #15151a;
+    padding: 20px 0;
+    margin-bottom: 30px;
+}
+
+.detalle-informacion span {
+    color: #9f2ffa;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.detalle-informacion p {
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+.detalle-comprar {
+    background: #9f2ffa;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    padding: 17px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.detalle-comprar:hover {
+    background: #9f2ffa;
+    transform: translateY(-3px);
+}
+
+.detalle-regresar {
+    color: #c5c5d0;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 22px;
+    transition: 0.3s;
+}
+
+.detalle-regresar:hover {
+    color: #9f2ffa;
+}
+
+
+/* FORMULARIO DE COMPRA */
+
+.formulario-compra {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 35px;
+    background: #101832;
+    border-radius: 15px;
+    color: white;
+    box-shadow: 0 0 20px rgba(255, 0, 100, 0.15);
+}
+
+.formulario-compra h1 {
+    color: #9f2ffa;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.formulario-compra h2 {
+    color: #9f2ffa;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.formulario-compra form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.formulario-compra label {
+    color: white;
+    font-weight: bold;
+}
+
+.formulario-compra input {
+    padding: 13px;
+    border: 1px solid #444;
+    border-radius: 8px;
+    background: #101832;
+    color: white;
+    font-size: 15px;
+}
+
+.formulario-compra .boton {
+    margin-top: 15px;
+    cursor: pointer;
+    border: none;
+}
+
+/* CONFIRMACION DE COMPRA */
+
+.compra-finalizada {
+    max-width: 1000px;
+    min-height: 450px;
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: #101832;
+    border-radius: 18px;
+    overflow: hidden;
+    color: white;
+    box-shadow: 0 0 25px rgba(255, 0, 100, 0.2);
+}
+
+.compra-foto img {
+    width: 100%;
+    height: 100%;
+    min-height: 450px;
+    object-fit: cover;
+}
+
+.compra-info {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+}
+
+.compra-info h1 {
+    color: #9f2ffa;
+    font-size: 32px;
+}
+
+.compra-info h2 {
+    font-size: 25px;
+}
+
+.compra-subtitulo,
+.compra-gracias {
+    color: #9f2ffa;
+}
+
+@media (max-width: 700px) {
+    .compra-finalizada {
+        grid-template-columns: 1fr;
+    }
+
+    .compra-foto img {
+        min-height: 250px;
+        max-height: 350px;
+    }
+}
+
+
+/* CELULARES */
+@media (max-width: 800px) {
+    .detalle-artista {
+        grid-template-columns: 1fr;
+    }
+
+    .detalle-contenido {
+        padding: 25px 10px;
+    }
+
+    .detalle-contenido h1 {
+        font-size: 35px;
+    }
+
+    .tarjetas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .encabezado {
+        flex-direction: column;
+    }
+
+    .navegacion {
+        justify-content: center;
+    }
+
+    .banner {
+        padding: 25px;
+    }
+
+    .banner h2 {
+        font-size: 30px;
+    }
+
+    .contenedor {
+        width: 92%;
+    }
+
+    .tarjetas {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* LOGIN Y REGISTRO */
+.auth-pagina {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    padding: 40px 5%;
+}
+
+.auth-pagina .logo {
+    font-size: 38px;
+    letter-spacing: 2px;
+}
+
+.auth-caja {
+    width: 100%;
+    max-width: 430px;
+    background-color: #19043b;
+    border-radius: 16px;
+    padding: 40px 35px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.auth-caja h1 {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.auth-subtitulo {
+    color: #f5f6fa;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* El formulario ya está dentro de la tarjeta: le saco su propio fondo */
+.auth-caja form {
+    background: none;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+}
+
+.auth-caja input:focus {
+    outline: none;
+    border-color: #9f2ffa;
+}
+
+.auth-caja button {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+}
+
+.mensaje-error {
+    background-color: rgba(255, 49, 88, 0.15);
+    border: 1px solid #9f2ffa;
+    color: #d198ff;
+    padding: 12px 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.auth-enlace {
+    text-align: center;
+    color: #c5c9d6;
+    margin-top: 25px;
+}
+
+.auth-enlace a {
+    color: #9f2ffa;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.auth-enlace a:hover {
+    text-decoration: underline;
+}
+
+.mensaje-exito {
+    background-color: rgba(46, 204, 113, 0.15);
+    border: 1px solid #9f2ffa;
+    color: #d198ff;
+    padding: 12px 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.mensaje-exito a {
+    color: #d198ff;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+/* PANEL DE ADMINISTRACIÓN */
+.admin-barra {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+
+.admin-barra .titulo-seccion {
+    margin-bottom: 0;
+}
+
+.buscador {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    background: none;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    flex: 1;
+    min-width: 280px;
+    justify-content: flex-end;
+}
+
+.buscador input {
+    margin-bottom: 0;
+    width: 100%;
+    max-width: 380px;
+}
+
+.buscador input:focus {
+    outline: none;
+    border-color: #9f2ffa;
+}
+
+.buscador-limpiar {
+    color: #c5c9d6;
+    text-decoration: none;
+}
+
+.buscador-limpiar:hover {
+    color: #9f2ffa;
+}
+
+.tabla-caja {
+    background-color: #19043b;
+    border-radius: 12px;
+    overflow-x: auto;
+    margin-bottom: 40px;
+}
+
+.tabla-admin {
+    margin: 0;
+    min-width: 760px;
+}
+
+.tabla-admin th,
+.tabla-admin td {
+    border: none;
+    border-bottom: 1px solid #251a36;
+    padding: 16px;
+    vertical-align: middle;
+}
+
+.tabla-admin th {
+    background-color: #19043b;
+    color: #9f2ffa;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.tabla-admin tr:last-child td {
+    border-bottom: none;
+}
+
+.acciones {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* El formulario de "Archivar" no necesita su tarjeta propia */
+.acciones form {
+    background: none;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+}
+
+.btn-editar {
+    display: inline-block;
+    padding: 10px 18px;
+    border: 1px solid #9f2ffa;
+    border-radius: 6px;
+    color: #9f2ffa;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.btn-editar:hover {
+    background-color: #9f2ffa;
+    color: white;
+}
+
+.acciones button {
+    padding: 10px 18px;
+    font-size: 14px;
+    background-color: transparent;
+    border: 1px solid #46516d;
+    color: #c5c9d6;
+}
+
+.acciones button:hover {
+    background-color: #19043b;
+    color: white;
+}
+
+.admin-vacio {
+    background-color: #19043b;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    color: #c5c9d6;
+}
+
+@media (max-width: 600px) {
+    .buscador {
+        justify-content: flex-start;
+    }
+
+    .buscador input {
+        max-width: none;
+    }
+}
+
+/* EDITAR USUARIO */
+.auth-caja-ancha {
+    max-width: 560px;
+}
+
+.fila-doble {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.botones-formulario {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 5px;
+}
+
+.auth-caja .botones-formulario button {
+    width: auto;
+    flex: 1;
+}
+
+.btn-cancelar {
+    padding: 14px 22px;
+    border: 1px solid #0d0022;
+    border-radius: 6px;
+    color: #c5c9d6;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.btn-cancelar:hover {
+    background-color: #130031;
+    color: white;
+}
+
+@media (max-width: 600px) {
+    .fila-doble {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* BOTÓN REACTIVAR */
+.acciones .btn-reactivar {
+    background-color: #9f2ffa;
+    border: 1px solid #9f2ffa;
+    color: white;
+}
+
+.acciones .btn-reactivar:hover {
+    background-color: #9f2ffa;
+    border-color: #9f2ffa;
+}
