@@ -40,7 +40,6 @@ $shows = [
     ]
 ];
 
-// Acepta ?show=omar o ?id=omar
 $artista = $_GET['show'] ?? $_GET['id'] ?? 'omar';
 
 if (!isset($shows[$artista])) {
@@ -136,7 +135,6 @@ $descripcion = $shows[$artista]['descripcion'];
 
     </main>
 
-    <!-- PIE DE PÁGINA -->
     <footer class="pie">
 
         <h3>CONCERTS</h3>
