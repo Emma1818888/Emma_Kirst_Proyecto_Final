@@ -10,20 +10,17 @@ if (!isset($_SESSION['usuario_id'])) {
     exit;
 }
 
-// Comprobar que sea administrador
 if ($_SESSION['usuario_rol'] !== 'admin') {
     header('Location: panel.php');
     exit;
 }
 
-// Comprobar que se haya recibido un ID
 $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
 
 if (!$id || $id <= 0) {
     exit('ID de usuario no válido.');
 }
 
-// Buscar el usuario
 $sql = 'SELECT id, nombre, apellido, dni, email
         FROM usuarios
         WHERE id = :id
@@ -39,7 +36,6 @@ if (!$usuario) {
     exit('No se encontró el usuario.');
 }
 
-// Nombre original, para el subtítulo (no cambia aunque haya errores)
 $nombreOriginal = $usuario['nombre'] . ' ' . $usuario['apellido'];
 
 $errores = [];
@@ -52,7 +48,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $dni = trim($_POST['dni'] ?? '');
     $email = trim($_POST['email'] ?? '');
 
-    // Validar campos
     if ($nombre === '' || $apellido === '' || $dni === '' || $email === '') {
         $errores[] = 'Todos los campos son obligatorios.';
     }
@@ -61,7 +56,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errores[] = 'El email no es válido.';
     }
 
-    // Comprobar DNI y email repetidos en otras cuentas
     if (empty($errores)) {
 
         $sql = 'SELECT id FROM usuarios
@@ -81,7 +75,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
-    // Actualizar los datos
     if (empty($errores)) {
 
         $sql = 'UPDATE usuarios
@@ -125,8 +118,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 
 <body>
-
-    <!-- ENCABEZADO -->
+    
     <header class="encabezado">
 
         <a href="admin_usuarios.php" class="logo">CONCERTS</a>
@@ -195,7 +187,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     </main>
 
-    <!-- PIE DE PÁGINA -->
     <footer class="pie">
         <p>© 2026 CONCERTS - Todos los derechos reservados.</p>
     </footer>
