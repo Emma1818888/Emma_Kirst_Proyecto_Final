@@ -4,19 +4,16 @@ session_start();
 
 require_once 'conexion.php';
 
-// Comprobar que haya iniciado sesión
 if (!isset($_SESSION['usuario_id'])) {
     header('Location: login.php');
     exit;
 }
 
-// Comprobar que sea administrador
 if ($_SESSION['usuario_rol'] !== 'admin') {
     header('Location: panel.php');
     exit;
 }
 
-// Obtener los usuarios archivados
 $sql = 'SELECT id, nombre, apellido, dni, email, creado_en, archivado_en
         FROM usuarios
         WHERE archivado_en IS NOT NULL
@@ -41,7 +38,6 @@ $usuarios = $stmt->fetchAll();
 
 <body>
 
-    <!-- ENCABEZADO -->
     <header class="encabezado">
 
         <a href="admin_usuarios.php" class="logo">CONCERTS</a>
@@ -131,7 +127,6 @@ $usuarios = $stmt->fetchAll();
 
     </main>
 
-    <!-- PIE DE PÁGINA -->
     <footer class="pie">
         <p>© 2026 CONCERTS - Todos los derechos reservados.</p>
     </footer>
