@@ -40,7 +40,6 @@ if (!$usuario) {
 
 <body>
 
-    <!-- ENCABEZADO -->
     <header class="encabezado">
 
         <a href="panel.php" class="logo">CONCERTS</a>
@@ -56,7 +55,6 @@ if (!$usuario) {
 
     <main class="contenedor">
 
-        <!-- BIENVENIDA -->
         <section class="bienvenida">
 
             <h1>
@@ -68,7 +66,6 @@ if (!$usuario) {
 
         </section>
 
-        <!-- BANNER PRINCIPAL -->
         <section class="banner" style="background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.75)), url('imagenes/banner.jpg');">
 
             <div class="banner-contenido">
@@ -88,7 +85,6 @@ if (!$usuario) {
 
         </section>
 
-        <!-- CONCIERTOS DESTACADOS -->
         <section>
 
             <h2 class="titulo-seccion">
@@ -151,7 +147,6 @@ if (!$usuario) {
 
         </section>
 
-        <!-- OFERTAS -->
         <section class="seccion-ofertas">
 
             <h2>¡No te pierdas ningún concierto!</h2>
@@ -169,7 +164,6 @@ if (!$usuario) {
 
     </main>
 
-    <!-- PIE DE PÁGINA -->
     <footer class="pie">
 
         <h3>CONCERTS</h3>
