@@ -14,10 +14,8 @@ if ($_SESSION['usuario_rol'] !== 'admin') {
     exit;
 }
 
-// Recibir lo que se escribió en el buscador
 $busqueda = trim($_GET['buscar'] ?? '');
 
-// Consultar usuarios activos
 $sql = 'SELECT id, nombre, apellido, dni, email, creado_en
         FROM usuarios
         WHERE archivado_en IS NULL
@@ -42,7 +40,6 @@ if ($busqueda !== '') {
     ];
 }
 
-// Ordenar los resultados
 $sql .= ' ORDER BY id DESC';
 
 $stmt = $conexion->prepare($sql);
@@ -64,7 +61,6 @@ $usuarios = $stmt->fetchAll();
 
 <body>
 
-    <!-- ENCABEZADO -->
     <header class="encabezado">
 
         <a href="admin_usuarios.php" class="logo">CONCERTS</a>
@@ -179,7 +175,6 @@ $usuarios = $stmt->fetchAll();
 
     </main>
 
-    <!-- PIE DE PÁGINA -->
     <footer class="pie">
         <p>© 2026 CONCERTS - Todos los derechos reservados.</p>
     </footer>
