@@ -66,7 +66,6 @@ $descripcion = $shows[$artista]['descripcion'];
 
 <body>
 
-    <!-- ENCABEZADO -->
     <header class="encabezado">
 
         <a href="panel.php" class="logo">CONCERTS</a>
