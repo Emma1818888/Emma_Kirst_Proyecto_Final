@@ -15,7 +15,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'] ?? '';
     $confirmar = $_POST['confirmar'] ?? '';
 
-    // se fija que esté todo
     if ($nombre === '' || $apellido === '' || $dni === '' || $email === '' || $password === '' || $confirmar === '') {
         $errores[] = 'Todos los campos son obligatorios.';
     }
@@ -24,7 +23,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errores[] = 'El correo electrónico no es válido.';
     }
 
-    // contraseñas coincidan
     if ($password !== $confirmar) {
         $errores[] = 'Las contraseñas no coinciden.';
     }
