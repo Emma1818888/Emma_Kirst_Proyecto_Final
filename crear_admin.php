@@ -5,7 +5,6 @@ require_once 'conexion.php';
 $errores = [];
 $mensaje = '';
 
-#Comprobar si ya existe un administrador
 $stmt = $conexion->query("SELECT COUNT(*) FROM usuarios WHERE rol = 'admin'");
 
 $existeAdmin = $stmt->fetchColumn();
@@ -22,7 +21,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = trim($_POST['email'] ?? '');
     $password = $_POST['password'] ?? '';
 
-#Validar campos
     if ($nombre === '' || $apellido === '' || $dni === '' || $email === '' || $password === '') {
         $errores[] = 'Todos los campos son obligatorios.';
     }
@@ -35,7 +33,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errores[] = 'La contraseña debe tener al menos 8 caracteres.';
     }
 
-#Comprobar DNI y email repetidos
     if (empty($errores)) {
 
         $sql = 'SELECT id FROM usuarios
@@ -53,7 +50,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
-#Crear administrador
     if (empty($errores)) {
 
         $passwordHash = password_hash($password, PASSWORD_DEFAULT);
