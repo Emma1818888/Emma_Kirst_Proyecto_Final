@@ -40,7 +40,6 @@ if (!$usuario) {
 
 <body>
 
-    <!-- ENCABEZADO -->
     <header class="encabezado">
 
         <a href="panel.php" class="logo">CONCERTS</a>
@@ -84,7 +83,6 @@ if (!$usuario) {
 
     </main>
 
-    <!-- PIE DE PÁGINA -->
     <footer class="pie">
 
         <h3>CONCERTS</h3>
