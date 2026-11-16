@@ -31,7 +31,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $usuario = $stmt->fetch();
 
-        // comprueba la contraseña
         if ($usuario && password_verify($password, $usuario['password_hash'])) {
 
             session_regenerate_id(true);
