@@ -14,14 +14,12 @@ if ($_SESSION['usuario_rol'] !== 'admin') {
     exit;
 }
 
-#Comprobar que se recibió el ID
 $id = filter_input(INPUT_POST, 'id', FILTER_VALIDATE_INT);
 
 if (!$id || $id <= 0) {
     exit('ID de usuario no válido.');
 }
 
-#Archivar el usuario sin borrar sus datos
 $sql = 'UPDATE usuarios
         SET archivado_en = CURRENT_TIMESTAMP
         WHERE id = :id
